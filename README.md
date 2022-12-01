@@ -1,6 +1,7 @@
 # crscraper_djangosite
 Django Website for my Crunchyroll Webscraper project
 This is the django website I made for my crunchroll webscraper project.
+Build using django and python. Runs from a linux server using apache2
 
 Displays a list of shows with the amount of episodes of each language that show has on crunchyroll
 
