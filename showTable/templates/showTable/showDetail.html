@@ -1,0 +1,29 @@
+{% extends "showTable/base.html" %}
+{% block content %}
+<div id = "episodes">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Season</th>
+                <th scope="col">Season Number</th>
+                <th scope="col">Episode Number</th>
+                <th scope="col">Episode Title</th>
+                <th scope="col">Link</th>
+                <th scope="col">Language</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            {% for ep in eps %}
+            <tr>
+                <th class="seasonTitle" scope="row">{{ep.season_title}}</th>
+                <td>{{ ep.season_number }}</td>
+                <td>{{ ep.episode_number}}</td>
+                <td class="episodeTitle">{{ ep.episode_title }}</td>
+                <td><a class="align-top" href="{{ ep.link|add:'/'|add:ep.url_title }}">Link</a></td>
+                <td class="language">{{ ep.language }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content%}

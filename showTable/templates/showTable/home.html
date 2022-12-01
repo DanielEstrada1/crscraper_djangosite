@@ -1,0 +1,30 @@
+{% extends "showTable/base.html" %}
+{% block content %}
+    <div id="shows">
+        <ul class="list-group list-group-flush list">
+            {% for ep in eps %}
+            <li class="list-group-item li-hover">
+                <div class="listContainer">
+                    <div class="row" onclick=location.href="{% url 'table-show' ep.show_id %}">
+                        <div class="container">
+                            <div class="row justify-content-md-left">
+                                <div class="col-md-auto">
+                                    <img class="image-parent" src="{{ ep.show_picurl }}" alt="">
+                                </div>
+                                <div class="col-md-auto">
+                                    <div class="row">
+                                        <h3 class="showTitle">{{ ep.show_title }}</span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="align-top">{{ ep.show_counts}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content%}
